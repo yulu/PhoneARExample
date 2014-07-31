@@ -12,6 +12,7 @@ import com.research.phonearlib.NativeTracking;
 import com.research.phonearlib.PhoneARActivity;
 import com.research.phonearlib.camera.CameraFrame;
 import com.research.phonearlib.camera.CvFrame.FrameAvailableListener;
+import com.research.phonearlib.renderer.BaseRenderer;
 
 
 public class MainActivity extends PhoneARActivity{
@@ -19,7 +20,7 @@ public class MainActivity extends PhoneARActivity{
 	private static final int			TRAIN = 1;
 	private static final int			TRACK = 2;
 	
-	private ObjectRenderer 		mRenderer;
+	private BaseRenderer 		mRenderer;
 	
 	private MenuItem			mItemTrain;
 	private int					mMode = DISPLAY;
@@ -61,7 +62,7 @@ public class MainActivity extends PhoneARActivity{
 			
 		});
 		
-		mRenderer = new ObjectRenderer(this, mTrackData);
+		mRenderer = new VideoRenderer(this, mTrackData);
 		mRenderer.registerRendererStartListener(mCvFrame);
 		mRenderer.setSurfaceView(mSurfaceView);
 		

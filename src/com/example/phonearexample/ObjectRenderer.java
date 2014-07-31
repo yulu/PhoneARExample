@@ -31,19 +31,6 @@ public class ObjectRenderer extends BaseRenderer{
 		getCurrentScene().addLight(mLight);
 
 		try {
-			/*LoaderMD5Mesh meshParser = new LoaderMD5Mesh(this,
-					R.raw.boblampclean_mesh);
-			meshParser.parse();
-
-			LoaderMD5Anim animParser = new LoaderMD5Anim("attack2", this,
-					R.raw.boblampclean_anim);
-			animParser.parse();
-
-			SkeletalAnimationSequence sequence = (SkeletalAnimationSequence) animParser
-					.getParsedAnimationSequence();
-
-			mObject = (SkeletalAnimationObject3D) meshParser
-					.getParsedAnimationObject();*/
 			
 			GZIPInputStream gzi = new GZIPInputStream(mContext.getResources()
 					.openRawResource(R.raw.android));
@@ -64,18 +51,9 @@ public class ObjectRenderer extends BaseRenderer{
 			mObject.setMaterial(androidMaterial);
 			
 			
-			
-			/*mObject.setAnimationSequence(sequence);
-			mObject.setScale(.01f);
-			
-			mObject.play();		
-
-
-			addChild(mObject);*/
-			
-			
 			mObject.rotateAround(new Vector3(1.0, 0.0, 0.0), -90.f);
 			mObject.setVisible(false);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
