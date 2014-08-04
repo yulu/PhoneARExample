@@ -22,7 +22,9 @@ public class TextRenderer extends BaseRenderer{
 	private Object3D mPlane;
 	private Material mMaterial;
 
-	public TextRenderer(Context context, TrackData td) {
+	private String text;
+	
+	public TextRenderer(Context context, TrackData td, String text) {
 		super(context, td);
 		tv = new TextView(context);
 	}
@@ -32,7 +34,10 @@ public class TextRenderer extends BaseRenderer{
 		//set material
 		mMaterial = new Material();
 		try {
-			mMaterial.addTexture(TextToTexture("This is a test"));
+			if(text != null && text.length() > 0)
+				mMaterial.addTexture(TextToTexture(text));
+			else
+				mMaterial.addTexture(TextToTexture("no text input"));
 			mMaterial.setColorInfluence(0);
 		} catch (TextureException e) {
 			e.printStackTrace();

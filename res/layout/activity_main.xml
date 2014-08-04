@@ -1,7 +1,103 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.phonearexample.MainActivity"
-    tools:ignore="MergeRootFrame" />
+    android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/text_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:orientation="vertical"
+        android:clickable="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tag Text Information"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="Input your text by clicking"/>
+     	<View
+    		android:layout_width="match_parent"
+    		android:layout_height="1dp"
+    		android:background="#dddddd"
+    		android:layout_marginTop="15dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/image_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:orientation="vertical"
+        android:clickable="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tag Image"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="Select image from photo gallery"/>
+     	<View
+    		android:layout_width="match_parent"
+    		android:layout_height="1dp"
+    		android:background="#dddddd"
+    		android:layout_marginTop="15dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/video_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:orientation="vertical"
+        android:clickable="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tag a Video Clip"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="Input file path to video clip"/>
+     	<View
+    		android:layout_width="match_parent"
+    		android:layout_height="1dp"
+    		android:background="#dddddd"
+    		android:layout_marginTop="15dp" />
+    </LinearLayout>  
+    <LinearLayout
+        android:id="@+id/model_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dip"
+        android:orientation="vertical"
+        android:clickable="true">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tag a 3D Model"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dip"
+            android:text="Input file path to 3D model"/>
+     	<View
+    		android:layout_width="match_parent"
+    		android:layout_height="1dp"
+    		android:background="#dddddd"
+    		android:layout_marginTop="15dp" />
+    </LinearLayout>      
+</LinearLayout>

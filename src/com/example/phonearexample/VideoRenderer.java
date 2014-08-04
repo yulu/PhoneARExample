@@ -21,7 +21,7 @@ public class VideoRenderer extends BaseRenderer{
 	private Object3D mPlane;
 	private boolean firstTrack = true;
 	
-	private String url = "http://www.pocketjourney.com/downloads/pj/video/famous.3gp";
+	private String url = "rtsp://r2---sn-a5m7zu7r.googlevideo.com/Ck0LENy73wIaRAnntm6E46MaYxMYDSANFC0-WNpTMOCoAUIJbXYtZ29vZ2xlSARSBXdhdGNoYM6M4d6V-p6AUooBC1lOSWlLZVZiX3BVDA==/C1BFF400D6ECF59CDA83EA80E908BCCB0F6D105F.6D5D4AF4775DF42D7C72A7B045A9E8E7E12F7DF1/yt5/1/video.3gp";
 	
 	public VideoRenderer(Context context, TrackData td) {
 		super(context, td);

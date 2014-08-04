@@ -6,6 +6,7 @@ import rajawali.materials.Material;
 import rajawali.materials.textures.ATexture;
 import rajawali.materials.textures.ATexture.TextureException;
 import rajawali.materials.textures.Texture;
+import rajawali.math.vector.Vector3;
 import rajawali.primitives.Plane;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -33,8 +34,10 @@ public class ImageRenderer extends BaseRenderer{
 			e.printStackTrace();
 		}
 		
-		mPlane = new Plane(1, 1, 1, 1);
-		mPlane.setDoubleSided(true);
+		mPlane = new Plane(3, 2, 1, 1);
+		mPlane.setScale(0.5);
+		//mPlane.setDoubleSided(true);
+		mPlane.rotateAround(new Vector3(0,1,0), 180.0);
 		mPlane.setMaterial(mMaterial);
 		
 		getCurrentScene().addChildAt(mPlane, 0);
@@ -42,7 +45,7 @@ public class ImageRenderer extends BaseRenderer{
 	
 
 	@Override
-	protected void drawModel(boolean tracked) {
+	protected synchronized void drawModel(boolean tracked) {
 		mPlane.setVisible(false);
 		
 		if(tracked){						
@@ -59,7 +62,7 @@ public class ImageRenderer extends BaseRenderer{
 		options.inInputShareable = true;
 		
 		int resourceId = mContext.getResources().getIdentifier(
-				"ic_launcher", "drawable",
+				"map", "drawable",
 				"com.example.phonearexample");
 
 		Bitmap bitmap = BitmapFactory.decodeResource(
